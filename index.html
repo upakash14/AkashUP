@@ -11,17 +11,21 @@
 
 <body>
 
-    <!-- TOP BAR -->
-    <header class="topbar">
-        <div class="container topbar-inner">
-            <div class="brand">
-                <span class="brand-logo">A</span>
-                <div class="brand-text">
-                    <h1>Akash U P</h1>
-                    <p>Computer Science Student</p>
-                </div>
+    <!-- LEFT FIXED PROFILE SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <div class="sidebar-profile">
+                <img src="assets/profile.jpg" alt="Akash Profile">
             </div>
-            <nav class="topnav">
+
+            <h2 class="name">Akash U P</h2>
+            <p class="role">Computer Science Student</p>
+
+            <p class="email">
+                📧 <a href="mailto:upakash2003@gmail.com">upakash2003@gmail.com</a>
+            </p>
+
+            <nav class="side-nav">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#education">Education</a>
@@ -31,164 +35,104 @@
                 <a href="#contact">Contact</a>
             </nav>
         </div>
-    </header>
+    </aside>
 
-    <!-- HERO SECTION -->
-    <section id="about" class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-card">
-                <h2>Hello, I'm <span>Akash</span> 👋</h2>
-                <p class="hero-role">Aspiring Software Developer | Problem Solver</p>
-                <p class="hero-desc">
-                    I am a Computer Science Engineering student with an interest in web development,
-                    problem solving, and building practical applications that help people.
-                </p>
-                <div class="hero-actions">
-                    <a href="assets/resume.pdf" class="btn primary" download>Download Resume</a>
-                    <a href="#contact" class="btn ghost">Contact Me</a>
-                </div>
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <h1>Hello, I'm <span>Akash</span> 👋</h1>
+            <p class="intro">
+                A passionate Computer Science student exploring programming,
+                web development, and building useful mini-projects.
+            </p>
+            <a href="assets/resume.pdf" download class="btn">Download Resume</a>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">C</div>
+                <div class="skill-card">Java</div>
+                <div class="skill-card">Python</div>
+                <div class="skill-card">PHP</div>
+                <div class="skill-card">MySQL</div>
             </div>
-            <div class="hero-profile">
-                <div class="profile-ring">
-                    <img src="assets/profile.jpg" alt="Akash U P">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <p class="section-subtitle">What I’m learning and working with</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Frontend</h3>
-                    <p>HTML5, CSS3, JavaScript, Bootstrap</p>
-                </div>
-                <div class="card">
-                    <h3>Backend</h3>
-                    <p>PHP, MySQL, Django (Basics)</p>
-                </div>
-                <div class="card">
-                    <h3>Programming</h3>
-                    <p>C, C++, Java, Python (Basics)</p>
-                </div>
-                <div class="card">
-                    <h3>Tools</h3>
-                    <p>Git, GitHub, VS Code, XAMPP</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="section alt">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-
+        <!-- EDUCATION -->
+        <section id="education" class="section">
+            <h2>Education</h2>
             <div class="timeline">
-                <div class="timeline-row">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>B.E. in Computer Science</h3>
-                        <p class="timeline-place">MAlnad College Of Engineering, Hassan</p>
-                        <p class="timeline-year">2023 – 2027 (Expected)</p>
-                        <p>Currently pursuing Engineering with focus on programming, databases, and web technologies.
-                        </p>
-                    </div>
+                <div class="timeline-item">
+                    <h3>B.E in Computer Science</h3>
+                    <p>College Name</p>
+                    <p class="year">2024 – Present</p>
                 </div>
-                <div class="timeline-row">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>PUC / 12th Standard</h3>
-                        <p class="timeline-place">Pace P U College Shivamogga </p>
-                        <p class="timeline-year">Completed: 2022</p>
-                        <p>Studied PCMC/Science with strong focus on Mathematics and Computer Science.</p>
-                    </div>
+                <div class="timeline-item">
+                    <h3>PUC / 12th</h3>
+                    <p>Institute Name</p>
+                    <p class="year">Completed 2022</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS (XML + XSLT GENERATED) -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">This section is generated using XML + XSLT in JavaScript</p>
-            <div id="projects-container">
-                <!-- XML + XSLT output will be injected here -->
-            </div>
-        </div>
-    </section>
+        <!-- PROJECTS (XML) -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div id="projects-container"></div>
+        </section>
 
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="section alt">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <ul class="list">
-                <li>Participated in college-level hackathons and coding contests.</li>
-                <li>Completed online coding challenges on platforms like HackerRank / LeetCode (you can modify).</li>
-                <li>Presented mini-projects in academic events and internal reviews.</li>
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements" class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Participated in hackathons.</li>
+                <li>Completed multiple mini projects.</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <ul class="list">
-                <li>Certificate in "Introduction to Web Development" </li>
-                <li>Programming in C / Java – MCE</li>
-                <li>NPTEL and Coursera </li>
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Web Development Basics</li>
+                <li>Programming in C & Java</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section alt">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <p class="section-subtitle">Feel free to reach out for projects, collaboration, or questions.</p>
+        <!-- CONTACT FORM -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
 
-            <form id="contactForm" method="post" action="php/contact.php">
-                <!-- or full URL if needed: http://localhost:8080/akash-portfolio/php/contact.php -->
+            <form action="php/contact.php" method="post" id="contactForm">
+                <label>Name</label>
+                <input type="text" name="name" required>
 
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+                <label>Email</label>
+                <input type="email" name="email" required>
 
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                <label>Subject</label>
+                <input type="text" name="subject" required>
 
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
+                <label>Message</label>
+                <textarea name="message" required></textarea>
 
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn primary">Send Message</button>
+                <button type="submit" class="btn">Send Message</button>
                 <p id="form-status"></p>
             </form>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="year"></span> Akash U P. All rights reserved.</p>
-            <p>Built using HTML, CSS, JavaScript, XML, XSLT, PHP, and MySQL.</p>
-        </div>
-    </footer>
+        <footer>
+            © <span id="year"></span> Akash U P. All Rights Reserved.
+        </footer>
+
+    </main>
 
 </body>
 
