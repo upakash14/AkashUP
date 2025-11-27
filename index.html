@@ -2,424 +2,193 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>My Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- GOOGLE FONT (Optional) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ---------- RESET ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background: #0f172a;
-            /* Dark blue background */
-            color: #e5e7eb;
-            /* Light text */
-            min-height: 100vh;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ---------- CONTAINER ---------- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px 16px 60px;
-        }
-
-        /* ---------- NAVBAR ---------- */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0 20px;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 16px;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a {
-            opacity: 0.8;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-
-        /* ---------- HERO SECTION (NO PHOTO) ---------- */
-        .hero {
-            padding: 40px 0 30px;
-            text-align: left;
-            max-width: 700px;
-
-            /* animation on load */
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid #374151;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .hero-title {
-            font-size: 2rem;
-            line-height: 1.3;
-            margin-bottom: 10px;
-        }
-
-        .hero-title span {
-            color: #38bdf8;
-            /* light blue for highlight */
-        }
-
-        .hero-subtitle {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-bottom: 18px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary,
-        .btn-outline {
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            border: 1px solid #38bdf8;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
-        }
-
-        .btn-primary {
-            background: #38bdf8;
-            color: #0f172a;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #e5e7eb;
-        }
-
-        .btn-outline:hover {
-            background: #111827;
-            transform: translateY(-2px);
-        }
-
-        .hero-meta {
-            font-size: 0.75rem;
-            opacity: 0.8;
-        }
-
-        /* ---------- SECTIONS WITH SIMPLE CARD ANIMATION ---------- */
-        .section {
-            margin-top: 40px;
-        }
-
-        .section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .section p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 16px;
-            margin-top: 12px;
-        }
-
-        .card {
-            background: #111827;
-            border-radius: 12px;
-            padding: 14px 14px 16px;
-            border: 1px solid #1f2937;
-            font-size: 0.85rem;
-
-            /* subtle animation on hover */
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            border-color: #38bdf8;
-        }
-
-        .card-title {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 999px;
-            background: #0b1120;
-            font-size: 0.7rem;
-            margin-right: 4px;
-            margin-top: 6px;
-            opacity: 0.9;
-        }
-
-        /* ---------- CONTACT SECTION ---------- */
-        .contact-row {
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        .contact-row span.label {
-            opacity: 0.7;
-            margin-right: 6px;
-        }
-
-        /* ---------- SIMPLE KEYFRAME ANIMATION ---------- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 600px) {
-            .hero-title {
-                font-size: 1.6rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 6px;
-            }
-        }
-
-        /* ---------- BOTTOM NAV ---------- */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #0f172a;
-            border-top: 1px solid #1f2937;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .bottom-nav a {
-            color: #e5e7eb;
-            font-size: 0.8rem;
-            opacity: 0.8;
-            text-decoration: none;
-            transition: 0.2s ease;
-        }
-
-        .bottom-nav a:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-
-        .bottom-logo {
-            font-weight: 700;
-            background: #38bdf8;
-            color: #0f172a;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.9rem;
-            transition: 0.2s ease;
-        }
-
-        .bottom-logo:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Akash U P | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
 </head>
 
 <body>
-    <div class="container">
 
-        <!-- NAVBAR -->
-        <header class="navbar">
-            <div class="logo">Hemanth • Portfolio</div>
-            <nav class="nav-links">
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <div class="brand">
+                <span class="brand-logo">A</span>
+                <div class="brand-text">
+                    <h1>Akash U P</h1>
+                    <p>Computer Science Student</p>
+                </div>
+            </div>
+            <nav class="topnav">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
                 <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <!-- HERO (NO PHOTO) -->
-        <section class="hero">
-            <div class="hero-badge">Student • Web Developer</div>
-            <h1 class="hero-title">
-                Hi, I'm <span>Hemanth Gowda</span> <br />
-
-            </h1>
-            <p class="hero-subtitle">
-                I am a college student learning web development. This portfolio shows my
-                projects, skills and achievements as part of my web programming assignment.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">View Projects</a>
-                <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
-
+    <!-- HERO SECTION -->
+    <section id="about" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-card">
+                <h2>Hello, I'm <span>Akash</span> 👋</h2>
+                <p class="hero-role">Aspiring Software Developer | Problem Solver</p>
+                <p class="hero-desc">
+                    I am a Computer Science Engineering student with an interest in web development,
+                    problem solving, and building practical applications that help people.
+                </p>
+                <div class="hero-actions">
+                    <a href="assets/resume.pdf" class="btn primary" download>Download Resume</a>
+                    <a href="#contact" class="btn ghost">Contact Me</a>
+                </div>
             </div>
-
-            <div class="hero-meta">
-                • HTML • CSS • JavaScript • PHP • MySQL
+            <div class="hero-profile">
+                <div class="profile-ring">
+                    <img src="assets/profile.jpg" alt="Akash U P">
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ABOUT -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>
-                I am an aspiring developer who loves building small projects and learning
-                new technologies. I enjoy turning ideas into working websites and tools.
-            </p>
-        </section>
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">What I’m learning and working with</p>
 
-        <!-- SKILLS -->
-        <section id="skills" class="section">
-            <h2>Skills</h2>
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-title">Web Technologies</div>
-                    <p>HTML, CSS, JavaScript, basic responsive design.</p>
-                    <span class="tag">Frontend</span>
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, Bootstrap</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">Backend Basics</div>
-                    <p>PHP, basic MySQL queries, Java </p>
-                    <span class="tag">Backend</span>
+                    <h3>Backend</h3>
+                    <p>PHP, MySQL, Django (Basics)</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">Tools</div>
-                    <p>VS Code, Git & GitHub, GitHub Pages deployment.</p>
-                    <span class="tag">GitHub</span>
+                    <h3>Programming</h3>
+                    <p>C, C++, Java, Python (Basics)</p>
+                </div>
+                <div class="card">
+                    <h3>Tools</h3>
+                    <p>Git, GitHub, VS Code, XAMPP</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PROJECTS -->
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-title">Personal Portfolio</div>
-                    <p>This website built using HTML, CSS, and a bit of JS for interactivity.</p>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                </div>
-                <div class="card">
-                    <div class="card-title">Farmer Assistant Web</div>
-                    <p>Simple PHP + MySQL project to store and display student records.</p>
-                    <span class="tag">PHP</span>
-                    <span class="tag">MySQL</span>
-                </div>
-            </div>
-        </section>
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section alt">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
 
-        <!-- CONTACT -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>If you want to reach me, you can use the contact form below or send an email.</p>
-            <div class="contact-row">
-                <span class="label">Email:</span> hmtchn777@gmail.com
+            <div class="timeline">
+                <div class="timeline-row">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>B.E. in Computer Science</h3>
+                        <p class="timeline-place">MAlnad College Of Engineering, Hassan</p>
+                        <p class="timeline-year">2023 – 2027 (Expected)</p>
+                        <p>Currently pursuing Engineering with focus on programming, databases, and web technologies.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>PUC / 12th Standard</h3>
+                        <p class="timeline-place">Pace P U College Shivamogga </p>
+                        <p class="timeline-year">Completed: 2022</p>
+                        <p>Studied PCMC/Science with strong focus on Mathematics and Computer Science.</p>
+                    </div>
+                </div>
             </div>
-            <!-- Simple Contact Form (Frontend only) -->
-            <form style="margin-top: 14px; max-width: 420px;">
-                <div style="margin-bottom: 8px;">
-                    <input type="text" name="name" placeholder="Your Name" required
-                        style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #1f2937; background:#020617; color:#e5e7eb;" />
+        </div>
+    </section>
+
+    <!-- PROJECTS (XML + XSLT GENERATED) -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">This section is generated using XML + XSLT in JavaScript</p>
+            <div id="projects-container">
+                <!-- XML + XSLT output will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section alt">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <ul class="list">
+                <li>Participated in college-level hackathons and coding contests.</li>
+                <li>Completed online coding challenges on platforms like HackerRank / LeetCode (you can modify).</li>
+                <li>Presented mini-projects in academic events and internal reviews.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <ul class="list">
+                <li>Certificate in "Introduction to Web Development" </li>
+                <li>Programming in C / Java – MCE</li>
+                <li>NPTEL and Coursera </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section alt">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">Feel free to reach out for projects, collaboration, or questions.</p>
+
+            <form id="contactForm" method="post" action="php/contact.php">
+                <!-- or full URL if needed: http://localhost:8080/akash-portfolio/php/contact.php -->
+
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <div style="margin-bottom: 8px;">
-                    <input type="email" name="email" placeholder="Your Email" required
-                        style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #1f2937; background:#020617; color:#e5e7eb;" />
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div style="margin-bottom: 8px;">
-                    <textarea name="message" rows="4" placeholder="Your Message" required
-                        style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #1f2937; background:#020617; color:#e5e7eb; resize: vertical;"></textarea>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
                 </div>
-                <button type="submit" class="btn-primary">Send Message</button>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary">Send Message</button>
+                <p id="form-status"></p>
             </form>
-        </section>
+        </div>
+    </section>
 
-
-
-
-    </div>
-    <!-- BOTTOM NAVBAR -->
-    <div class="bottom-nav">
-        <div class="bottom-logo">HG</div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Akash U P. All rights reserved.</p>
+            <p>Built using HTML, CSS, JavaScript, XML, XSLT, PHP, and MySQL.</p>
+        </div>
+    </footer>
 
 </body>
 

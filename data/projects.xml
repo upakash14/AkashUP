@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projects>
-    <project>
-        <title>Agriculture Assistant Web App</title>
-        <role>Full Stack Developer</role>
-        <tech>HTML, CSS, JavaScript, Django, Plant.id API</tech>
-        <description>
-            Helps farmers detect plant diseases from images and suggests treatments.
-        </description>
-    </project>
+  <project>
+    <title>Student Attendance Tracker</title>
+    <role>Full Stack Developer</role>
+    <tech>HTML, CSS, JavaScript, PHP, MySQL</tech>
+    <description>
+      A web application to manage and view student attendance with simple reports.
+    </description>
+  </project>
 
-    <project>
-        <title>Personal Portfolio Website</title>
-        <role>Frontend Developer</role>
-        <tech>HTML, CSS, JavaScript</tech>
-        <description>
-            Responsive portfolio website showcasing my skills, education, and projects.
-        </description>
-    </project>
+  <project>
+    <title>Portfolio Website</title>
+    <role>Frontend Developer</role>
+    <tech>HTML, CSS, JavaScript</tech>
+    <description>
+      A responsive personal portfolio website showcasing skills, education, and projects.
+    </description>
+  </project>
 
-    <project>
-        <title>Student Result Management System</title>
-        <role>Backend Developer</role>
-        <tech>PHP, MySQL, Bootstrap</tech>
-        <description>
-            Web app to manage and display student marks and calculate results.
-        </description>
-    </project>
+  <project>
+    <title>Notes Management App</title>
+    <role>Backend Developer</role>
+    <tech>PHP, MySQL, Bootstrap</tech>
+    <description>
+      A simple CRUD based web app for creating, editing, and managing personal notes.
+    </description>
+  </project>
 </projects>
